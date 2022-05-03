@@ -10,16 +10,15 @@ class ProductsTest < ApplicationSystemTestCase
   test "lets a signed in user create a new product" do
     login_as users(:george)
     visit "/products/new"
-    # save_and_open_screenshot
+    # take_screenshot
 
     fill_in "product_name", with: "Le Wagon"
-    # save_and_open_screenshot
+    # take_screenshot
 
     click_on "Create Product"
     # take_screenshot
 
     # Should be redirected to Home with new product
-    # assert_redirected_to root_path
     assert_text "Awesome Products"
   end
 end
